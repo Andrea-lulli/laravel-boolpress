@@ -21,8 +21,6 @@ class TagController extends Controller
 
 
         return response()->json($tags);
-
-
     }
 
     /**
@@ -44,7 +42,7 @@ class TagController extends Controller
      */
     public function show($name)
     {
-        $tag = Tag::where('name', 'like' ,$name)->with('posts')->get();
+        $tag = Tag::where('name', 'like', $name)->with('posts')->get();
 
 
         return response()->json($tag);

@@ -2,9 +2,9 @@
   <div class="text-center">
     <h1 class="m-4">{{ this.$route.params.name }}</h1>
     <ul>
-      <li v-for="elem in tag">
+      <li v-for="elem in tag" :key="elem.id">
         <ul>
-          <li v-for="posts in elem.posts">
+          <li v-for="posts in elem.posts" :key="posts.id">
             {{ posts.title }}
           </li>
         </ul>

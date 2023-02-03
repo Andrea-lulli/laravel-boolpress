@@ -1994,7 +1994,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'PostsList',
+  name: "PostsList",
   components: {
     LoaderComp: _LoaderComp_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     Pagination: _Pagination_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
@@ -2014,7 +2014,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
       this.isLoading = true;
-      axios.get('http://localhost:8000/api/posts?page=' + page).then(function (res) {
+      axios.get("http://localhost:8000/api/posts?page=" + page).then(function (res) {
         console.log(res.data);
         var _res$data = res.data,
           data = _res$data.data,
@@ -2522,12 +2522,12 @@ var render = function render() {
       attrs: {
         to: "/posts/".concat(elem.id)
       }
-    }, [_vm._v("\n                " + _vm._s(elem.title) + "\n            ")]), _vm._v(" "), elem.category ? _c("div", [_vm._v("\n                " + _vm._s(elem.category.name) + "\n            ")]) : _vm._e(), _vm._v(" "), _c("ul", _vm._l(elem.tags, function (tag, index) {
+    }, [_vm._v("\n          " + _vm._s(elem.title) + "\n        ")]), _vm._v(" "), elem.category ? _c("div", [_vm._v("\n          " + _vm._s(elem.category.name) + "\n        ")]) : _vm._e(), _vm._v(" "), _c("ul", _vm._l(elem.tags, function (tag, index) {
       return _c("li", {
         key: index
-      }, [_vm._v(_vm._s(tag.name))]);
+      }, [_vm._v("\n            " + _vm._s(tag.name) + "\n          ")]);
     }), 0)], 1);
-  }), 0) : _c("p", [_vm._v("Non ci sono post ")]), _vm._v(" "), _c("Pagination", {
+  }), 0) : _c("p", [_vm._v("Non ci sono post")]), _vm._v(" "), _c("Pagination", {
     attrs: {
       pagination: _vm.pagination
     },
@@ -2561,8 +2561,12 @@ var render = function render() {
   }, [_c("h1", {
     staticClass: "m-4"
   }, [_vm._v(_vm._s(this.$route.params.name))]), _vm._v(" "), _c("ul", _vm._l(_vm.tag, function (elem) {
-    return _c("li", [_c("ul", _vm._l(elem.posts, function (posts) {
-      return _c("li", [_vm._v("\n          " + _vm._s(posts.title) + "\n        ")]);
+    return _c("li", {
+      key: elem.id
+    }, [_c("ul", _vm._l(elem.posts, function (posts) {
+      return _c("li", {
+        key: posts.id
+      }, [_vm._v("\n          " + _vm._s(posts.title) + "\n        ")]);
     }), 0)]);
   }), 0)]);
 };
@@ -2599,7 +2603,7 @@ var render = function render() {
       attrs: {
         to: "/tags/".concat(elem.name)
       }
-    }, [_vm._v("\n                  " + _vm._s(elem.name) + "\n              ")])], 1);
+    }, [_vm._v("\n          " + _vm._s(elem.name) + "\n        ")])], 1);
   }), 0) : _c("p", [_vm._v("Non ci sono tags")])], 1)]);
 };
 var staticRenderFns = [];
@@ -2744,7 +2748,7 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", {
     staticClass: "text-center"
-  }, [_c("h1", [_vm._v(" tag Show")]), _vm._v(" "), _c("TagCard")], 1);
+  }, [_c("h1", [_vm._v("tag Show")]), _vm._v(" "), _c("TagCard")], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;

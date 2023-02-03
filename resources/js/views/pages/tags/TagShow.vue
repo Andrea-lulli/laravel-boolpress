@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    <h1> tag Show</h1>
+    <h1>tag Show</h1>
     <TagCard />
   </div>
 </template>
@@ -11,7 +11,7 @@ import TagCard from "../../../components/tags/TagCard.vue";
 export default {
   name: "TagShow",
   components: {
-    TagCard
+    TagCard,
   },
 };
 </script>

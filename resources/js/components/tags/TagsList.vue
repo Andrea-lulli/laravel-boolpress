@@ -5,10 +5,9 @@
 
       <ul v-else-if="tags.length">
         <li v-for="elem in tags" :key="elem.id" class="border-top p-2">
-            <router-link :to="`/tags/${elem.name}`" >
-                    {{ elem.name }}
-                </router-link>
-
+          <router-link :to="`/tags/${elem.name}`">
+            {{ elem.name }}
+          </router-link>
         </li>
       </ul>
       <p v-else>Non ci sono tags</p>
@@ -39,8 +38,6 @@ export default {
       axios
         .get("http://localhost:8000/api/tags")
         .then((res) => {
-
-
           this.tags = res.data;
           console.log(this.tags);
         })

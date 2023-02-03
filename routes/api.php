@@ -19,10 +19,18 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::namespace ('Api')->prefix('/posts')->group(function () {
+Route::namespace('Api')->prefix('/posts')->group(function () {
 
-Route::get('/', 'PostController@index');
+    Route::get('/', 'PostController@index');
 
-Route::get('/{id}', 'PostController@show');
+    Route::get('/{id}', 'PostController@show');
+});
 
-    });
+
+
+Route::namespace('Api')->prefix('/tags')->group(function () {
+
+    Route::get('/', 'TagController@index');
+
+    Route::get('/{name}', 'TagController@show');
+});

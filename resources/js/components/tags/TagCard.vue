@@ -1,8 +1,15 @@
 <template>
   <div class="text-center">
-
-    <h1 class="m-4">{{ tag.name }}</h1>
-
+    <h1 class="m-4">{{ this.$route.params.name }}</h1>
+    <ul>
+      <li v-for="elem in tag">
+        <ul>
+          <li v-for="posts in elem.posts">
+            {{ posts.title }}
+          </li>
+        </ul>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -12,7 +19,7 @@ export default {
   components: {},
   data() {
     return {
-      tag: null,
+      tag: [],
     };
   },
   mounted() {
@@ -25,7 +32,6 @@ export default {
         .then((res) => {
           console.log(res);
           this.tag = res.data;
-
         })
         .catch((err) => {
           console.log(err);

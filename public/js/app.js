@@ -2055,7 +2055,7 @@ __webpack_require__.r(__webpack_exports__);
   components: {},
   data: function data() {
     return {
-      tag: null
+      tag: []
     };
   },
   mounted: function mounted() {
@@ -2560,7 +2560,11 @@ var render = function render() {
     staticClass: "text-center"
   }, [_c("h1", {
     staticClass: "m-4"
-  }, [_vm._v(_vm._s(_vm.tag.name))])]);
+  }, [_vm._v(_vm._s(this.$route.params.name))]), _vm._v(" "), _c("ul", _vm._l(_vm.tag, function (elem) {
+    return _c("li", [_c("ul", _vm._l(elem.posts, function (posts) {
+      return _c("li", [_vm._v("\n          " + _vm._s(posts.title) + "\n        ")]);
+    }), 0)]);
+  }), 0)]);
 };
 var staticRenderFns = [];
 render._withStripped = true;

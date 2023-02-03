@@ -16,7 +16,7 @@ class TagController extends Controller
      */
     public function index()
     {
-        $tags = Tag::All();
+        $tags = Tag::With('posts')->get();
 
 
 
@@ -44,9 +44,8 @@ class TagController extends Controller
      */
     public function show($name)
     {
-        $tag = Tag::where('name', 'like' ,$name)->With( 'post')->get();
-        if (!$tag)
-            return response('Post non trovato', 404);
+        $tag = Tag::where('name', 'like' ,$name)->with('posts')->get();
+
 
         return response()->json($tag);
     }
